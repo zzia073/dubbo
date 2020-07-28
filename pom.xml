@@ -10,7 +10,25 @@
     <version>1.0-SNAPSHOT</version>
     <modules>
         <module>zookeeper-study01</module>
+        <module>dubbo-study01</module>
+        <module>dubbo-config02</module>
     </modules>
+    <properties>
+        <dubbo.version>2.7.7</dubbo.version>
+    </properties>
 
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo</artifactId>
+            <version>${dubbo.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-dependencies-zookeeper</artifactId>
+            <version>${dubbo.version}</version>
+            <type>pom</type>
+        </dependency>
+    </dependencies>
 
 </project>

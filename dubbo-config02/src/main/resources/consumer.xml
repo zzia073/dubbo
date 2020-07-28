@@ -1,0 +1,13 @@
+<beans xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xmlns="http://www.springframework.org/schema/beans"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://dubbo.apache.org/schema/dubbo http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+    <dubbo:application name="demo-consumer">
+        <!-- qos提供dubbo在线运维命令，默认配置端口22222，此处原来没有配置则和提供者端口冲突 -->
+        <dubbo:parameter key="qos.enable" value="false"/>
+    </dubbo:application>
+    <!-- group为zookeeper注册的根目录默认是dubbo，消费者需要和提供者一致才能找到对应的提供者 -->
+    <dubbo:registry group="aaa" address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:reference id="demoService" check="false" interface="com.study.dubbo.demo.DemoService"/>
+</beans>
