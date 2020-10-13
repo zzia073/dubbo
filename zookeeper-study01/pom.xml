@@ -11,7 +11,7 @@
 
     <artifactId>zookeeper-study01</artifactId>
     <properties>
-        <junit.version>RELEASE</junit.version>
+        <junit.version>4.13.1</junit.version>
         <log4j.version>2.8.2</log4j.version>
         <zookeeper.version>3.4.10</zookeeper.version>
     </properties>
